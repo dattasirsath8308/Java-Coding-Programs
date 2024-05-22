@@ -1,0 +1,16 @@
+
+
+
+Time Complexity
+- Overall Running time depends on multiple factors
+    - Logic/ Agro 
+    - Language : c/c++/ java fast as compare to python & JS
+    - Operating i3   & m1 pro
+
+
+Def : no of operations  as a function of inputs. (Asymptotic analysis)
+
+Types of Time Complexity analysis and thier Notation
+- Worst Case time Complexity (Big O  O(n))
+- Best Case time Complexity (Big omega omega(1))
+- Average Case time Complexity (Big theta theta(n))

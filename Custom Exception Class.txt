@@ -1,0 +1,65 @@
+
+Why Use Custom Exceptions?
+Exceptions in Java cover all types of exceptions that can possibly occur in programming, but we may have to create customized exceptions at times to suit our needs. To create a custom exception in Java, we must extend the Exception class belonging to Java.lang package. 
+
+The following are the reasons to use customized exceptions in Java.
+
+
+There are a few common exceptions, such as The Captcha text Doesn't match, Enter Correct Password, Enter valid Phone Number, and more. These business logic exceptions are not in-built, yet their presence is required for the application. Programmers develop these exceptions so users can understand the exact issue and the system can function properly.
+
+Another reason to use exceptions is to catch and provide a specific treatment to a subset of existing exceptions in Java.
+
+How to Create Custom Exception in Java?
+To create a custom exception in Java (creating own exception in Java), follow these steps:
+
+1. Define the Custom Exception Class
+Create a new Java class that extends either the Exception class (for checked exceptions) or the RuntimeException class (for unchecked exceptions). This new class will represent your custom exception. It should have at least one constructor to initialize the exception with an optional error message.
+
+2. Add Custom Constructors (Optional)
+You can add constructors to the custom exception class to provide more flexibility in initializing the exception with specific error messages or additional data.
+
+3. Throw the Custom Exception
+
+Within your code, when you encounter a specific condition that warrants throwing the custom exception, use the throw keyword followed by the instantiation of your custom exception class with an appropriate error message or data.
+
+
+Java Custom Exception Example
+Here is an example of creating custom exception in Java:
+
+// CustomException.java
+public class CustomException extends Exception {
+    // Add any additional fields or constructors you may need
+    // Create a default constructor
+    public CustomException() {
+        super();
+    }
+    // Create a constructor with a custom error message
+    public CustomException(String message) {
+        super(message);
+    }
+}
+Now, let's understand how to use this custom exception in another class:
+
+// Example.java
+public class Example {
+    public static void main(String[] args) {
+        try {
+            // Simulate a situation where the custom exception might be thrown
+            int result = divideNumbers(10, 0);
+            System.out.println("Result: " + result);
+        } catch (CustomException ex) {
+            // Catch the custom exception and handle it
+            System.out.println("Custom Exception occurred: " + ex.getMessage());
+        }
+    }
+    // A method that may throw the custom exception
+    public static int divideNumbers(int dividend, int divisor) throws CustomException {
+        if (divisor == 0) {
+            // Throw the custom exception with a specific error message
+            throw new CustomException("Division by zero is not allowed.");
+        }
+        return dividend / divisor;
+    }
+}
+In this example, we created a custom exception class CustomException that extends the Exception class. We defined two constructors: one without arguments (default constructor) and another with a custom error message. 
+
