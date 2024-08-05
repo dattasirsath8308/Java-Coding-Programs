@@ -55,4 +55,8 @@ public class _17_CommonElementbtnTwoArrays {
 
         list1.stream().filter(list2::contains).forEach(System.out::println);
     }
+
+
+
+    
 }

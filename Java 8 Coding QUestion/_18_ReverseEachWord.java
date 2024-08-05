@@ -52,6 +52,7 @@ public class _18_ReverseEachWord {
         String revStr = Arrays.stream(str.split(" ")).map(e -> new StringBuffer(e).reverse())
                 .collect(Collectors.joining(" "));
 
+
         System.out.println(revStr);
 
     }
