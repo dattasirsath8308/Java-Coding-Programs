@@ -13,6 +13,7 @@ public class EvenOddUsingCompatableFuture {
 
         CompletableFuture.runAsync(() -> EvenOddUsingCompatableFuture.printNumber(evenCount));
 
+        
         CompletableFuture.runAsync(() -> EvenOddUsingCompatableFuture.printNumber(oddCount));
         
         try {
@@ -25,7 +26,8 @@ public class EvenOddUsingCompatableFuture {
     }
 
     public static void printNumber(IntPredicate condition) {
-        IntStream.range(1, 10).filter(condition) .forEach(EvenOddUsingCompatableFuture::execute);
+        IntStream.range(1,10)
+        .filter(condition) .forEach(EvenOddUsingCompatableFuture::execute);
     }
 
     public static void execute(int no) {

@@ -1,8 +1,11 @@
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.stream.IntStream;
 
 /*
 10) How do you merge two unsorted arrays into single sorted array without duplicates?
+
+
 
 
 
@@ -12,7 +15,10 @@ import java.util.stream.IntStream;
 public class _10_UnsortedToSortWithoutDuplicate {
 
     public static void main(String[] args) {
+
         
+        
+
         // int[] a = new int[] {4, 2, 5, 1};
          
         // int[] b = new int[] {8, 1, 9, 5};
