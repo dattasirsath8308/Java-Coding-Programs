@@ -1,6 +1,20 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
+
+/*
+======= Lambda Expression =======
+
+1. Lambda Expression is just an anonymous(nameless) function. That means the function which doesn’t 
+have the name,return type and access modifiers. 
+2. Lambda Expression also known as anonymous functions. 
+3. Lambda expressions are mainly used in Stream API and functional interfaces to simplify operations like filtering, 
+sorting, mapping, event handling, and multithreading.
+
+*/
+
+
 //  Java Lambda Expression without Parameters
 @FunctionalInterface
 interface MyFunctionalInterface

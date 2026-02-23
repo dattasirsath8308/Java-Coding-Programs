@@ -13,6 +13,13 @@ Explanation: The first element 4 moves to last position, the second element 5 mo
 
  */
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class Array_Reverse {
 
     public static void main(String[] args) {
@@ -37,6 +44,12 @@ public class Array_Reverse {
         System.out.println("After Reverse ");
         thirdWayToReverseArray(arr);
         printArray(arr);
+        
+
+
+        practiseReverseArrys();
+        
+        practiseReverseArrysUsingJava8();
         
 
         
@@ -113,6 +126,65 @@ public class Array_Reverse {
             arr[n- i- 1] = temp;
 
         }
+
+
+    }
+
+
+    public static void practiseReverseArrys(){
+
+        System.out.println("\n\nPractise");
+
+        int arr[] = { 1, 4, 3, 2, 6, 5 };
+        System.out.println("Before Reverse ");
+        printArray(arr);
+        int n =  arr.length;
+
+        for(int i = 0 ; i < n / 2; i++){
+
+            int temp = arr[i];
+            System.out.println("temp :"+ temp);
+      
+            arr[i] = arr[n - i - 1];
+            
+            System.out.println("arr[i] :"+ arr[n - i - 1]);
+
+            arr[n - i - 1] = temp;
+            
+            System.out.println("arr[n - i - 1] :"+ temp);
+
+        }
+
+        printArray(arr);
+
+    }
+
+
+
+    public static void practiseReverseArrysUsingJava8(){
+
+        System.out.println("revese using java 8 ");
+
+        int arr[] = { 1, 4, 3, 2, 6, 5 };
+      
+        List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
+
+        Collections.reverse(list);
+
+        int[] rev= list.stream().mapToInt(i -> i).toArray();
+
+        System.out.println(Arrays.toString(rev));
+
+
+        int n = arr.length;
+
+        int[] reversedArray = IntStream.range(0, n)
+        .map(i ->  arr[n - 1 - i])
+        .toArray();
+
+
+        System.out.println("\n Another Way \n"+ Arrays.toString(rev));
+
 
 
     }
